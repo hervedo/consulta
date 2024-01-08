@@ -1,0 +1,50 @@
+### RFs (Requisitos Funcionais)
+
+[x] Deve ser possível cadastrar usuário
+[] Deve ser possível se autenticar
+[] Deve ser possível obter o perfil logado
+[] Deve ser possível alterar a senha
+[] Deve ser possível alterar dados do usuário
+[] Deve ser possível bloquear usuário
+
+[] Deve ser possível cadastrar questionário
+[] Deve ser possível cadastrar várias perguntas ao questionário
+[] Deve ser possível registrar as respostas
+[] Deve ser possível obter o número de respostas registradas pelo usuário
+[] Deve ser possível obter as respostas por região
+
+### RNs (Regras de Negócio)
+
+[] Não deve permitir se cadastrar com um e-mail duplicado
+[] Não deve permitir usuário se logar 2x ao mesmo tempo, exceto admin.
+[] Não deve permitir registrar respostas a mais de 50m do anterior.
+
+## RNFs (Requisitos Não Funcionais)
+
+[] A senha do usuário precisa estar criptografado
+[] Os dados da aplicação precisam estar persistidos em PostgresSQL
+[] O usuário deve ser identificado por JWT (JSON Web Token)
+
+### TABELAS
+
+    PRODUTO
+            id : String
+            codref: String
+            name : String
+            preco: Decimal
+            estoque: Decimal
+            created_at : timestamp
+            Updated_at : Timestamp
+
+
+
+### Rotas API
+
+    post('token/create')
+
+// Rotas para o APP - Usuários level 1
+
+    post('produto')  //Cria Produto
+    get('produtos')  //Lista todos os produtos
+    get('produto/id')  //Lista produto especifico
+    put('produto')  //Atualiza Produto
